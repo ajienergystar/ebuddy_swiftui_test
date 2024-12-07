@@ -1,5 +1,5 @@
 //
-//  ProfileCardView.swift
+//  UserQueriesViewModel.swift
 //  EBuddyArtist
 //
 //  Created by mac on 7/12/24.

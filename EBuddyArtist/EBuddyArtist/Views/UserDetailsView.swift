@@ -5,6 +5,7 @@ struct UserDetailsView: View {
     @State private var isImagePickerPresented = false
     @State private var selectedImage: UIImage?
     
+    
     var body: some View {
         NavigationView {
             VStack(spacing: 16) {
@@ -24,7 +25,7 @@ struct UserDetailsView: View {
                             .frame(width: 150, height: 150)
                             .overlay(Text("No Image").foregroundColor(.white))
                     }
-                    
+
                     Button(action: {
                         isImagePickerPresented = true
                     }) {
@@ -35,7 +36,7 @@ struct UserDetailsView: View {
                             .foregroundColor(.white)
                             .cornerRadius(10)
                     }
-                    
+
                     Form {
                         Section(header: Text("User Details")) {
                             TextRow(label: "UID", value: user.uid)
@@ -44,6 +45,7 @@ struct UserDetailsView: View {
                             TextRow(label: "Gender", value: user.gender.capitalized)
                         }
                     }
+                    
                 } else if let errorMessage = viewModel.errorMessage {
                     Text("Error: \(errorMessage)")
                         .foregroundColor(.red)
@@ -73,11 +75,11 @@ struct TextRow: View {
         HStack {
             Text(label)
                 .font(.headline)
-                .foregroundColor(.primary)
+                .foregroundColor(Color("primaryTextColor"))
             Spacer()
             Text(value)
                 .font(.body)
-                .foregroundColor(.secondary)
+                .foregroundColor(Color("primaryTextColor"))
         }
     }
 }
